@@ -1,7 +1,7 @@
 #!/bin/sh
-ctr=$(buildah from fedora:31)
+ctr=$(buildah from fedora:32)
 wrkdir=/usr/local/bin
-version=5
+version=6
 buildah copy $ctr hellogo $wrkdir
 buildah run $ctr chmod a+x $wrkdir/hellogo
 buildah run $ctr chgrp -R 0 $wrkdir 
