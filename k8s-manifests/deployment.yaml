@@ -4,7 +4,7 @@ metadata:
   labels:
     run: hellogo
   name: hellogo
-  namespace: hellogo
+  namespace: hellogo-dev
 spec:
   progressDeadlineSeconds: 600
   replicas: 2
@@ -24,7 +24,7 @@ spec:
         run: hellogo
     spec:
       containers:
-      - image: quay.io/rgerardi/hellogo:5
+      - image: image-registry.openshift-image-registry.svc:5000/cicd/hellogo:latest
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
