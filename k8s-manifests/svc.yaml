@@ -4,7 +4,7 @@ metadata:
   labels:
     run: hellogo
   name: hellogo
-  namespace: hellogo
+  namespace: hellogo-dev
 spec:
   externalTrafficPolicy: Cluster
   ports:
