@@ -2,16 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: hellogo
+    app: hellogo
   name: hellogo
-  namespace: hellogo-dev
 spec:
   progressDeadlineSeconds: 600
   replicas: 2
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      run: hellogo
+      app: hellogo
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -21,7 +20,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        run: hellogo
+        app: hellogo
     spec:
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/cicd/hellogo:latest
